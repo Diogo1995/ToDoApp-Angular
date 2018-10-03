@@ -1,6 +1,7 @@
 <div class="container">
   <button (click)="decrement()">Decrement</button>
   <button (click)="increment()">Increment</button>
+  <button (click)="load()">Load</button>
 
   <div>Current Count: {{ ( count$ | async ).counter }}</div>
 

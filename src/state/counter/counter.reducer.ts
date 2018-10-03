@@ -4,7 +4,7 @@ import { CounterActionTypes, CounterActions } from '@state/counter/counter.actio
 
 export function counterReducer(state = initialState, action: CounterActions): State {
     switch (action.type) {
-        case CounterActionTypes.INCREMENT: 
+        case CounterActionTypes.INCREMENT:
             return {
                 ...state,
                 counter: state.counter + 1
@@ -14,6 +14,12 @@ export function counterReducer(state = initialState, action: CounterActions): St
             return {
                 ...state,
                 counter: state.counter - 1
+            };
+
+        case CounterActionTypes.LOAD_SUCCEEDED:
+            return {
+                ...state,
+                counter: action.payload.counter
             };
 
         default: {

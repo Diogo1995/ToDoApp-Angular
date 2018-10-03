@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 
 import { counterReducer } from '@state/counter/counter.reducer';
 import { todoListReducer } from '@state/todo-list/todo-list.reducer';
+import { CounterEffects } from '@state/counter/counter.effects';
 
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 
 @NgModule({
     imports: [
@@ -12,6 +15,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
             count: counterReducer,
             todoList: todoListReducer
         }),
+        EffectsModule.forRoot([
+            CounterEffects
+        ]),
         StoreDevtoolsModule.instrument()
     ]
 })
