@@ -1,5 +1,5 @@
 export const environment = {
-    name: 'production',
+    name: 'staging',
     production: true
   };
   
